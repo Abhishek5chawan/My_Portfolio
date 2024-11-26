@@ -45,7 +45,7 @@ const projects = [
   {
     title: 'MysteryMsg',
     description: 'MysteryMsg is a platform that allows users to send anonymous messages to one another',
-    deployedUrl: 'https://mystery-msg-six.vercel.app/dashboard',
+    deployedUrl: 'https://mystery-msg-six.vercel.app/',
     githubUrl: 'https://github.com/Abhishek5chawan/MysteryMsg',
     image: '/MysteryMsg.png',
     stack: ['nextjs', 'shadcn', 'resend email','HuggingFace GPT-3 AI', 'next auth', 'mongoDb'],
