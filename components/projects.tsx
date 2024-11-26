@@ -21,7 +21,7 @@ const projects = [
   {
     title: 'StreamTube',
     description: 'A complete backend for a video streaming and tweeting platform.',
-    deployedUrl: 'https://mega-backend-1aqtw25uz-abhishek-cs-projects.vercel.app/?vercelToolbarCode=1pb5RtyaCFc2ME3',
+    deployedUrl: 'https://documenter.getpostman.com/view/38208307/2sAYBUED6o',
     githubUrl: 'https://github.com/Abhishek5chawan/Mega-Backend',
     image: '/StreamTube.png',
     stack: ['Next.js', 'Express', 'MongoDB'],
@@ -45,7 +45,7 @@ const projects = [
   {
     title: 'MysteryMsg',
     description: 'MysteryMsg is a platform that allows users to send anonymous messages to one another',
-    deployedUrl: 'https://github.com/Abhishek5chawan/MysteryMsg',
+    deployedUrl: 'https://mystery-msg-six.vercel.app/dashboard',
     githubUrl: 'https://github.com/Abhishek5chawan/MysteryMsg',
     image: '/MysteryMsg.png',
     stack: ['nextjs', 'shadcn', 'resend email','HuggingFace GPT-3 AI', 'next auth', 'mongoDb'],
