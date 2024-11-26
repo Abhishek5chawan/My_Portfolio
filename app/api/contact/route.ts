@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
     // Send thank you email to the visitor
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'test@resend.dev',
       to: email,
       subject: 'Thank you for your message',
       html: `
