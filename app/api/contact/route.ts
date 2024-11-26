@@ -31,10 +31,17 @@ export async function POST(req: Request) {
     });
 
     // Send thank you email to the visitor
+<<<<<<< HEAD
     await transporter.sendMail({
       from: `"Abhishek's Portfolio" <${process.env.SMTP_USER}>`, // Sender address
       to: email, // Recipient address
       subject: 'Thank you for your message', // Subject line
+=======
+    await resend.emails.send({
+      from: 'test@resend.dev',
+      to: email,
+      subject: 'Thank you for your message',
+>>>>>>> f2a861d6c3e8af4da925f8d9c7fc4ac2ab1e49bd
       html: `
         <p>Thank you for visiting our page. We appreciate your interest, and we'll be in touch soon.</p>
         <p>Your message: ${description}</p>
