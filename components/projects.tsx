@@ -40,7 +40,7 @@ const projects = [
     deployedUrl: 'https://appwrit-blog.vercel.app/',
     githubUrl: 'https://github.com/Abhishek5chawan/Appwrite-Blog',
     image: '/appwriteBlog.png',
-    stack: ['React', 'Appwrite', 'tailwind css','react-router-dom'],
+    stack: ['React', 'Appwrite', 'tailwind css','redux toolkit', 'react router dom'],
   },
   {
     title: 'MysteryMsg',
