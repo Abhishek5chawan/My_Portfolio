@@ -1,6 +1,11 @@
+"use client"
+
+import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaGithub } from 'react-icons/fa'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
 import {
@@ -45,53 +50,85 @@ const projects = [
     image: '/MysteryMsg.png',
     stack: ['nextjs', 'shadcn', 'resend email','HuggingFace GPT-3 AI', 'next auth', 'mongoDb'],
   },
-  
-  // Add more projects as needed
 ]
 
 export default function Projects() {
+  const controls = useAnimation()
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
+
   return (
-    <section className="my-12">
-      <h2 className="text-3xl font-bold mb-6">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <Card key={project.title} className="overflow-hidden">
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={400}
-              height={200}
-              className="w-full h-48 object-cover"
-            />
-            <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
-              <CardDescription>{project.description}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2">
-                {project.stack.map((tech) => (
-                  <Badge key={tech} variant="secondary">
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-            <CardFooter className="flex justify-between">
-              <Button asChild>
-                <Link href={project.deployedUrl} target="_blank" rel="noopener noreferrer">
-                  View Live
-                </Link>
-              </Button>
-              <Button variant="outline" asChild>
-                <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                  <FaGithub className="mr-2" />
-                  Source Code
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
+    <section ref={ref} className="py-20">
+      <motion.div
+        initial="hidden"
+        animate={controls}
+        variants={{
+          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, y: 50 }
+        }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              variants={{
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 50 }
+              }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-xl border border-border dark:border-border/50 shadow-md">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-xl font-semibold">{project.title}</CardTitle>
+                  <CardDescription className="text-sm text-muted-foreground">{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="flex flex-wrap gap-2">
+                    {project.stack.map((tech) => (
+                      <Badge key={tech} variant="secondary" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="flex justify-between gap-4">
+                  <Button asChild variant="default" className="flex-1">
+                    <Link href={project.deployedUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                      <FaExternalLinkAlt className="mr-2" />
+                      View Live
+                    </Link>
+                  </Button>
+                  <Button variant="outline" asChild className="flex-1">
+                    <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                      <FaGithub className="mr-2" />
+                      Source Code
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   )
 }

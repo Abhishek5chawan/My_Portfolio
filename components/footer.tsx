@@ -4,10 +4,12 @@ import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
+import { motion } from 'framer-motion'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { toast } from "@/components/ui/use-toast"
+import { Mail, Phone, Send } from 'lucide-react'
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Invalid email address' }),
@@ -59,40 +61,87 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-muted py-12">
+    <footer className="bg-gradient-to-b from-background to-muted py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-md mx-auto">
-          <div>
-            <Input
-              type="email"
-              placeholder="Email"
-              {...register('email')}
-              className={errors.email ? 'border-red-500' : ''}
-            />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message?.toString()}</p>}
-          </div>
-          <div>
-            <Input
-              type="tel"
-              placeholder="Phone Number"
-              {...register('phone')}
-              className={errors.phone ? 'border-red-500' : ''}
-            />
-            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message?.toString()}</p>}
-          </div>
-          <div>
-            <Textarea
-              placeholder="Your message"
-              {...register('description')}
-              className={errors.description ? 'border-red-500' : ''}
-            />
-            {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description.message?.toString()}</p>}
-          </div>
-          <Button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Sending...' : 'Send Message'}
-          </Button>
-        </form>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-4xl font-bold mb-8 text-center">Get in Touch</h2>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 max-w-md mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="relative">
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  {...register('email')}
+                  className={`pl-10 ${errors.email ? 'border-red-500' : ''}`}
+                />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
+              </div>
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message?.toString()}</p>}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="relative">
+                <Input
+                  type="tel"
+                  placeholder="Phone Number"
+                  {...register('phone')}
+                  className={`pl-10 ${errors.phone ? 'border-red-500' : ''}`}
+                />
+                <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
+              </div>
+              {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message?.toString()}</p>}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <Textarea
+                placeholder="Your message"
+                {...register('description')}
+                className={`min-h-[120px] ${errors.description ? 'border-red-500' : ''}`}
+              />
+              {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description.message?.toString()}</p>}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                {isSubmitting ? (
+                  <span className="flex items-center justify-center">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </span>
+                ) : (
+                  <span className="flex items-center justify-center">
+                    <Send className="mr-2" size={18} />
+                    Send Message
+                  </span>
+                )}
+              </Button>
+            </motion.div>
+          </form>
+        </motion.div>
       </div>
     </footer>
   )

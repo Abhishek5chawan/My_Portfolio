@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
     // Send thank you email to the visitor
     await resend.emails.send({
-      from: 'noreply@resend.com',
+      from: 'onboarding@resend.dev',
       to: email,
       subject: 'Thank you for your message',
       html: `
@@ -34,7 +34,7 @@ export async function POST(req: Request) {
 
     // Send notification email to the page owner
     await resend.emails.send({
-      from: 'noreply@resend.com',
+      from: 'onboarding@resend.dev',
       to: process.env.OWNER_EMAIL as string,
       subject: 'New contact form submission on portfolio',
       html: `
