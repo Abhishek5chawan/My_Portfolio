@@ -5,13 +5,14 @@ import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { IconType } from 'react-icons'
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub } from 'react-icons/fa'
-import { SiNextdotjs, SiMongodb, SiPostgresql, SiExpress, SiSass } from 'react-icons/si'
+import { SiNextdotjs, SiMongodb, SiPostgresql, SiExpress, SiRedux } from 'react-icons/si'
 
 const skills = [
   { name: 'HTML', icon: FaHtml5 },
   { name: 'CSS', icon: FaCss3Alt },
   { name: 'JavaScript', icon: FaJs },
   { name: 'React', icon: FaReact },
+  { name: 'Redux Toolkit', icon: SiRedux },
   { name: 'Node.js', icon: FaNodeJs },
   { name: 'Next.js', icon: SiNextdotjs },
   { name: 'MongoDB', icon: SiMongodb },
@@ -19,7 +20,6 @@ const skills = [
   { name: 'Express', icon: SiExpress },
   { name: 'Git', icon: FaGitAlt },
   { name: 'GitHub', icon: FaGithub },
-  { name: 'Sass', icon: SiSass },
 ]
 
 export default function Skills() {
