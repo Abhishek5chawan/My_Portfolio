@@ -81,7 +81,7 @@ export default function Header() {
                 <span>Call (+91) 8951059470</span>
               </Link>
               <Link
-                href="https://www.linkedin.com/in/abhishek-c-450a81300/"
+                href="www.linkedin.com/in/abhishek5chawan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm hover:text-primary transition-colors flex items-center space-x-1"
