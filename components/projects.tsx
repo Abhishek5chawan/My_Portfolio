@@ -19,6 +19,14 @@ import {
 
 const projects = [
   {
+    title: 'Cloudinary-SaaS',
+    description: 'A application to tranform the given images into social media ready aspect ratios and compress the videos by leveraging cloudinary AI.',
+    deployedUrl: 'https://ai-saas-cloudinary.vercel.app/home',
+    githubUrl: 'https://github.com/Abhishek5chawan/AI_SaaS_Cloudinary',
+    image: '/cloudinary_saas.png',
+    stack: ['Next.js', 'TypeScript', 'clerk', 'Cloudinary', 'PostgreSQL', 'NeonDB', 'DaisyUI'],
+  },
+  {
     title: 'StreamTube',
     description: 'A complete backend for a video streaming and tweeting platform.',
     deployedUrl: 'https://documenter.getpostman.com/view/38208307/2sAYBUED6o',
@@ -40,7 +48,7 @@ const projects = [
     deployedUrl: 'https://appwrit-blog.vercel.app/',
     githubUrl: 'https://github.com/Abhishek5chawan/Appwrite-Blog',
     image: '/appwriteBlog.png',
-    stack: ['React', 'Appwrite', 'redux toolkit', 'react router dom', 'tailwind css'],
+    stack: ['React', 'JavaScript', 'Appwrite', 'redux toolkit', 'react router dom', 'tailwind css'],
   },
   {
     title: 'MysteryMsg',
@@ -48,7 +56,7 @@ const projects = [
     deployedUrl: 'https://mystery-msg-six.vercel.app/',
     githubUrl: 'https://github.com/Abhishek5chawan/MysteryMsg',
     image: '/MysteryMsg.png',
-    stack: ['nextjs', 'shadcn', 'resend email','HuggingFace GPT-3 AI', 'next auth', 'mongoDb'],
+    stack: ['nextjs', 'TypeScript', 'shadcn', 'resend email','OpenAI GPT-3.2 AI', 'next auth', 'mongoDb'],
   },
 ]
 
