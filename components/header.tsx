@@ -100,7 +100,7 @@ export default function Header() {
               </Link>
               <Button asChild variant="outline" size="sm" className="group">
                 <Link
-                  href="/resume.pdf"
+                  href="/ABHISHEKC_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-1"

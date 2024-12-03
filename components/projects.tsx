@@ -24,7 +24,7 @@ const projects = [
     deployedUrl: 'https://ai-saas-cloudinary.vercel.app/home',
     githubUrl: 'https://github.com/Abhishek5chawan/AI_SaaS_Cloudinary',
     image: '/cloudinary_saas.png',
-    stack: ['Next.js', 'TypeScript', 'clerk', 'Cloudinary', 'PostgreSQL', 'NeonDB', 'DaisyUI'],
+    stack: ['Next.js', 'TypeScript', 'clerk', 'Cloudinary AI', 'PostgreSQL', 'NeonDB', 'DaisyUI'],
   },
   {
     title: 'StreamTube',
@@ -56,7 +56,7 @@ const projects = [
     deployedUrl: 'https://mystery-msg-six.vercel.app/',
     githubUrl: 'https://github.com/Abhishek5chawan/MysteryMsg',
     image: '/MysteryMsg.png',
-    stack: ['nextjs', 'TypeScript', 'shadcn', 'resend email','OpenAI GPT-3.2 AI', 'next auth', 'mongoDb'],
+    stack: ['nextjs', 'TypeScript', 'shadcn', 'Node Mailer','OpenAI GPT-3.2 AI', 'next auth', 'mongoDb'],
   },
 ]
 

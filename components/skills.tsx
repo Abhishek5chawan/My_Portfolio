@@ -4,20 +4,27 @@ import { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { IconType } from 'react-icons'
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub } from 'react-icons/fa'
-import { SiNextdotjs, SiMongodb, SiPostgresql, SiExpress, SiRedux } from 'react-icons/si'
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaDatabase } from 'react-icons/fa'
+import { SiNextdotjs, SiMongodb, SiPostgresql, SiExpress, SiRedux, SiTypescript, SiPrisma, SiTailwindcss } from 'react-icons/si'
+import { TbBrandNextjs } from 'react-icons/tb'
 
 const skills = [
   { name: 'HTML', icon: FaHtml5 },
   { name: 'CSS', icon: FaCss3Alt },
   { name: 'JavaScript', icon: FaJs },
+  { name: 'TypeScript', icon: SiTypescript },
   { name: 'React', icon: FaReact },
   { name: 'Redux Toolkit', icon: SiRedux },
   { name: 'Node.js', icon: FaNodeJs },
   { name: 'Next.js', icon: SiNextdotjs },
+  { name: 'Tailwind CSS', icon: SiTailwindcss },
   { name: 'MongoDB', icon: SiMongodb },
+  { name: 'MongoDB Aggregation', icon: SiMongodb },
   { name: 'PostgreSQL', icon: SiPostgresql },
   { name: 'Express', icon: SiExpress },
+  { name: 'Prisma', icon: SiPrisma },
+  { name: 'NeonDB', icon: FaDatabase },
+  { name: 'NextAuth', icon: TbBrandNextjs },
   { name: 'Git', icon: FaGitAlt },
   { name: 'GitHub', icon: FaGithub },
 ]
