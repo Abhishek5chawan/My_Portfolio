@@ -19,7 +19,15 @@ import {
 
 const projects = [
   {
-    title: 'Cloudinary-SaaS',
+    title: 'ByteTweet',
+    description: 'A application for twitting',
+    deployedUrl: 'https://github.com/Abhishek5chawan/ByteTweet',
+    githubUrl: 'https://github.com/Abhishek5chawan/ByteTweet',
+    image: '/ByteTweet.png',
+    stack: ['Python','Django', 'Mysql', 'Bootstap'],
+  },
+  {
+    title: 'Media Optimization Platform',
     description: 'A application to tranform the given images into social media ready aspect ratios and compress the videos by leveraging cloudinary AI.',
     deployedUrl: 'https://ai-saas-cloudinary.vercel.app/home',
     githubUrl: 'https://github.com/Abhishek5chawan/AI_SaaS_Cloudinary',
@@ -27,7 +35,7 @@ const projects = [
     stack: ['Next.js', 'TypeScript', 'clerk', 'Cloudinary AI', 'PostgreSQL', 'NeonDB', 'DaisyUI'],
   },
   {
-    title: 'StreamTube',
+    title: 'VideoHub Service',
     description: 'A complete backend for a video streaming and tweeting platform.',
     deployedUrl: 'https://documenter.getpostman.com/view/38208307/2sAYBUED6o',
     githubUrl: 'https://github.com/Abhishek5chawan/Mega-Backend',
@@ -43,7 +51,7 @@ const projects = [
     stack: ['HTML', 'CSS', 'JavaScript'],
   },
   {
-    title: 'Appwrite Blog',
+    title: 'PublishX',
     description: 'A blog app using appwrite backend.',
     deployedUrl: 'https://appwrit-blog.vercel.app/',
     githubUrl: 'https://github.com/Abhishek5chawan/Appwrite-Blog',
@@ -51,7 +59,7 @@ const projects = [
     stack: ['React', 'JavaScript', 'Appwrite', 'redux toolkit', 'react router dom', 'tailwind css'],
   },
   {
-    title: 'MysteryMsg',
+    title: 'WhisperLink',
     description: 'MysteryMsg is a platform that allows users to send anonymous messages to one another',
     deployedUrl: 'https://mystery-msg-six.vercel.app/',
     githubUrl: 'https://github.com/Abhishek5chawan/MysteryMsg',

@@ -5,7 +5,7 @@ import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { IconType } from 'react-icons'
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaDatabase } from 'react-icons/fa'
-import { SiNextdotjs, SiMongodb, SiPostgresql, SiExpress, SiRedux, SiTypescript, SiPrisma, SiTailwindcss, SiNginx } from 'react-icons/si'
+import { SiNextdotjs, SiMongodb, SiPostgresql, SiExpress, SiRedux, SiTypescript, SiPrisma, SiTailwindcss, SiNginx, SiPython, SiDjango, } from 'react-icons/si'
 import { TbBrandNextjs } from 'react-icons/tb'
 import { GiIceCube } from 'react-icons/gi'
 
@@ -30,6 +30,8 @@ const skills = [
   { name: 'GitHub', icon: FaGithub },
   { name: 'Nginx', icon: SiNginx },
   { name: 'Coolify', icon: GiIceCube },
+  { name: "Python", icon: SiPython },
+  { name: "Django", icon: SiDjango },
 ]
 
 export default function Skills() {

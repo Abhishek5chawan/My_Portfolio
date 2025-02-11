@@ -74,7 +74,7 @@ export default function Header() {
             >
               <Link href="" className="text-sm hover:text-primary transition-colors flex items-center space-x-1">
                 <Mail size={16} />
-                <span>Email abhishekchawan907@gmail.com</span>
+                <span>Email abhishekchawan9072@gmail.com</span>
               </Link>
               <Link href="" className="text-sm hover:text-primary transition-colors flex items-center space-x-1">
                 <Phone size={16} />
